@@ -1,0 +1,184 @@
+#wrap { width: 100%; margin: 0 auto; font-family: 'Noto Sans KR', sans-serif;}
+.inner { margin: 0 250px; box-sizing: border-box;}
+
+/* content1 : nav + banner */
+#content1 { position: relative;}
+#content1 #header {}
+#content1 #header .Main_logo {
+    float: left;
+    position: absolute;
+    top: 30px;
+    left: 250px;
+    z-index: 100;
+}
+#content1 #header .Main_logo a {}
+#content1 #header .Main_logo a img{}
+
+#nav {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    right: 250px;
+    z-index: 100;
+}
+#nav .navList {}
+#nav .navList > div{
+    display: inline-block;
+    margin-right: 30px;
+    width: 100px;
+    height: 60px;
+}
+#nav .navList .nav-item { display: inline-block;}
+#nav .navList .nav-item a {}
+#nav .navList .nav-item a .nav-name {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #282828;
+    position: relative;
+}
+#nav .navList .nav-item a .nav-name span {
+    transition: .2s;
+    opacity: 0;
+    position: relative;
+    left: -15px;
+    bottom: 15px;
+}
+#nav .navList .nav-item:nth-child(3) a .nav-name span { left: 5px; }
+#nav .navList .nav-item:nth-child(4) a .nav-name span { left: -10px; }
+#nav .navList .nav-item:hover a .nav-name span {
+    opacity: 1;
+    bottom: 0;
+}
+#nav .navList .nav-item a .nav-name::before {
+    content: attr(data-name);
+    position: absolute;
+    font-size: 20px;
+    width: 80px;
+    font-weight: 400;
+    color: #282828;
+}
+#nav .navList .nav-item:hover a .nav-name::before { visibility: hidden;}
+#nav .navList .nav-item a .nav-name span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #f40000;
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+    text-align: center;
+}
+#nav .navList .nav-item:hover a .nav-name span::after{
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+}
+#nav .navList .nav-item a .subMenu {
+    position: absolute;
+    top: 50px;
+    left: -43px;
+    background: rgba(255,255,255,0.5);
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: none;
+    transition: 0.4s;
+}
+#nav .navList .nav-item a .subMenu li {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+    color: #282828;
+}
+#nav .navList .nav-item a .subMenu li:first-child { margin-top: 0;}
+#nav .navList .nav-item:hover a .subMenu { display: block;}
+#nav .navList .nav-item a .subMenu li:hover { color: #f40000; font-weight: 900;} 
+
+#banner { width: 100%;}
+#banner .main-banner { height: 3000px; position: relative;}
+#banner .main-banner > li { 
+    width: 100%; 
+    height: 1000px;
+    background-position: 50% 20%;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    position: absolute;
+    transition: 0.8s;
+}
+#banner .main-banner > li:nth-child(1) { background-image: url(../images/Mainbanner1.jpg); }
+#banner .main-banner > li:nth-child(2) { background-image: url(../images/Mainbanner2.jpg); }
+#banner .main-banner > li:nth-child(3) { background-image: url(../images/Mainbanner3.jpg); }
+#banner .main-banner > li .banner-inner{}
+#banner .main-banner > li .banner-inner .banner-left{ 
+    float: left; 
+    width: 700px; 
+    height: 250px; 
+    position: absolute; 
+    left: 0px; 
+    bottom: 150px; 
+    background: rgba(255,255, 255, 0.7); 
+    padding: 50px 0 50px 250px; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+.banner-left h2 { font-size: 33px; color: #282828; font-weight: bold;}
+.banner-left p { font-size: 20px; color: #282828; font-weight: 600;}
+.banner-left .more { width: 100px; background: #282828; border-radius: 20px; text-align: center; margin-top: 5px; padding-bottom: 5px; transition: 0.3s;}
+.banner-left .more a { color: #fff; font-size: 15px;}
+.banner-left .more:hover { background: #f40000;}
+#banner .main-banner .banner-right{ 
+    float: right; 
+    position: relative;
+    right: 1.5%;
+    width: 10%;
+    height: 750px;
+    margin-top: 100px;
+    z-index: 11;
+}
+.banner-right .banner-paging {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.5%;
+}
+.banner-right .banner-paging > li {
+    width: 100px;
+    height: 5px;
+    background: #fff;
+    margin-top: 15px;
+    position: relative;
+    cursor: pointer;
+}
+.banner-right .banner-paging > li::before {
+    content: "";
+    position: absolute;
+    background: #f40000;
+    width: 0px;
+    height: 5px;
+}
+.banner-right .banner-paging > li.on::before {
+    animation: bannerAni 4.5s linear; 
+    width: 100px;
+}
+.banner-right .banner-paging > li.on::after {
+    content: "";
+    display: block;
+    clear: both;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: -15px;   
+}
+@keyframes bannerAni {
+    0% { width: 0px;}
+    50% { width: 50px;}
+    100% { width: 100px;}
+}
