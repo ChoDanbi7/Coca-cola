@@ -1,0 +1,173 @@
+#wrap { overflow-x: hidden;}
+.inner { margin: 0 250px; box-sizing: border-box;}
+li, h1, h2, h3, h4, a, p, span { font-family: 'Noto Sans KR', sans-serif; color: #282828;}
+.classicBtn { 
+    width: 100px; 
+    background: #282828; 
+    border-radius: 20px; 
+    text-align: center; 
+    margin-top: 5px; 
+    padding: 10px 0; 
+    transition: 0.3s; 
+    cursor: pointer;
+    color: #fff;
+    line-height: 15px;
+    border: 0;
+}
+.classicBtn:hover {
+    background: #f40000;
+}
+
+/* skipNav */
+#skipNav a {
+    display: block; 
+    width: 100%; 
+    line-height: 50px; 
+    text-align: center; 
+    color:#fff; 
+    background: #000; 
+    position: absolute; 
+    left: 0; 
+    top: -1000px; 
+}
+#skipNav a:hover,#skipNav a:active,#skipNav a:focus  { top: 0; }
+
+/* header */
+#content1 { position: relative;}
+#content1 #header { padding-bottom: 110px; border-bottom: 1px solid #dcdcdc;}
+#content1 #header .Main_logo {
+    float: left;
+    position: absolute;
+    top: 30px;
+    left: 250px;
+    z-index: 100;
+}
+#content1 #header .Main_logo a {}
+#content1 #header .Main_logo a img{}
+
+#nav {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    right: 250px;
+    z-index: 100;
+}
+#nav .navList {}
+#nav .navList > div{
+    display: inline-block;
+    margin-right: 30px;
+    width: 100px;
+    height: 60px;
+}
+#nav .navList .nav-item { display: inline-block;}
+#nav .navList .nav-item a {}
+#nav .navList .nav-item a .nav-name {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #282828;
+    position: relative;
+    line-height: 45px;
+}
+#nav .navList .nav-item a .nav-name span {
+    transition: .2s;
+    opacity: 0;
+    position: relative;
+    left: -15px;
+    bottom: 15px;
+}
+#nav .navList .nav-item:nth-child(3) a .nav-name span { left: 5px; }
+#nav .navList .nav-item:nth-child(4) a .nav-name span { left: -5px; }
+#nav .navList .nav-item:hover a .nav-name span {
+    opacity: 1;
+    bottom: 0;
+}
+#nav .navList .nav-item a .nav-name::before {
+    content: attr(data-name);
+    position: absolute;
+    font-size: 20px;
+    width: 80px;
+    font-weight: 400;
+    color: #282828;
+}
+#nav .navList .nav-item:hover a .nav-name::before { visibility: hidden;}
+#nav .navList .nav-item a .nav-name span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #f40000;
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+    text-align: center;
+}
+#nav .navList .nav-item:hover a .nav-name span::after{
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+}
+#nav .navList .nav-item .subMenu {
+    position: absolute;
+    top: 50px;
+    left: -43px;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid #555;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: none;
+    transition: 0.4s;
+}
+#nav .navList .nav-item .subMenu li { text-align: center;}
+#nav .navList .nav-item .subMenu li a { font-size: 18px; margin-top: 10px;}
+#nav .navList .nav-item .subMenu li:first-child { margin-top: 0;}
+#nav .navList .nav-item:hover .subMenu { display: block;}
+#nav .navList .nav-item .subMenu li:hover a { color: #f40000; font-weight: 700;} 
+
+/* footer */
+#footer { background: #282828; padding: 70px 100px; position: relative;}
+#footer .footer .footer_left .f_up p { color: #fff; margin-top: 10px; font-size: 16px;}
+#footer .footer .footer_left .f_border { border: thin solid #fff; margin: 30px 0;}
+#footer .footer .footer_left .f_down .f_Dmenu li { display: inline-block; position: relative; padding: 0 10px;}
+#footer .footer .footer_left .f_down .f_Dmenu li:first-child { padding-left: 0;}
+#footer .footer .footer_left .f_down .f_Dmenu li::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 16px;
+    position: absolute;
+    top: 4px;
+    left: -2px;
+    background: #fff;
+}
+#footer .footer .footer_left .f_down .f_Dmenu li:first-child:after { display: none;}
+#footer .footer .footer_left .f_down .f_Dmenu li a { color: #fff; transition: 0.3s;}
+#footer .footer .footer_left .f_down .f_Dmenu li:hover a { color: rgba(255,255,255,0.7);}
+#footer .footer .footer_left .f_down nav { margin-top: 15px;}
+#footer .footer .footer_left .f_down .f_Dicon li { display: inline-block; margin-right: 10px; width: 50px;}
+#footer .footer .footer_left .f_down .f_Dicon li a { transition: .4s;}
+#footer .footer .footer_left .f_down .f_Dicon li:hover a { opacity: 0.7;}
+#footer .footer .footer_left .f_down .f_Dicon li a img { width: 100%;}
+#footer .footer .footer_right { position: absolute; right: 70px; top: -80px; width: 250px;}
+#footer .footer .footer_right img { width: 100%;}
+
+/* topUp btn*/
+#top_btn {
+    display: none;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    background: transparent;
+    cursor: pointer;
+    z-index: 9999;
+    border: 1px solid #282828;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+#top_btn i { font-size: 23px; transition: .3s;}
+#top_btn:hover i { color: #f40000;}
