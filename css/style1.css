@@ -10,8 +10,14 @@
 #sub1_content3 .sub_title > p { font-size: 18px; font-weight: 600; margin-bottom: 100px;}
 
 .sub1_cont { width: 100%; }
-.subDesc { width: 100%; position: relative; overflow: hidden; margin-bottom: 100px; visibility: hidden; transition: .4s;}
-.subDesc.scrollOn { visibility: visible;}
+.subDesc { width: 100%; position: relative; overflow: hidden; margin-bottom: 100px; visibility: hidden; transition: .4s; }
+@keyframes subDesc {
+    0% { transform: translateY(50%);}
+    35% { transform: translateY(30%);}
+    70% { transform: translateY(10%);}
+    100% { transform: translateY(0);}
+}
+.subDesc.scrollOn { visibility: visible; animation: subDesc .4s linear;}
 .subDesc .sub1Left { float: left;}
 .subDesc .sub1Right { float: right;}
 .subDesc .sub1Left img { border-radius: 0 0 100px 0; }
@@ -22,6 +28,5 @@
 .subDesc .sub1_descP .classicBtn a { color: #fff; font-size: 14px; font-weight: 600;}
 .subDesc .sub1_descI { width: 50%;}
 .subDesc .sub1_descI img { width: 100%; height: 350px;}
-.sub1_desc1 { visibility: visible;}
 .sub1_desc2 > .sub1Right { right: 0px; text-align: right;}
 .sub1_desc4 > .sub1Right { right: 0px; text-align: right;}
