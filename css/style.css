@@ -180,12 +180,12 @@
 #content3 .cont3_desc .cont3_left { float: left; width: 25%; text-align: center; width: 40%; padding: 10px 0;}
 #content3 .cont3_desc .cont3_left ul {}
 #content3 .cont3_desc .cont3_left ul li { margin-bottom: 30px;}
-#content3 .cont3_desc .cont3_left ul li strong { font-size: 80px; color: #f40000;}
-#content3 .cont3_desc .cont3_left ul li span { font-size: 40px; color: #f40000;}
+#content3 .cont3_desc .cont3_left ul li strong { font-size: 80px; color: #f40000; font-weight: bold;}
+#content3 .cont3_desc .cont3_left ul li span { font-size: 40px; color: #f40000; font-weight: bold;}
 #content3 .cont3_desc .cont3_left ul li h3 { 
     font-size: 20px;
     margin-top: -15px;
-    font-weight: bold;
+    font-weight: 600;
 }
 #content3 .cont3_desc .cont3_right { float: right; width: 60%;}
 #content3 .cont3_desc .cont3_right img { width: 100%; height: 600px;}

@@ -84,7 +84,7 @@ $cont3_strong.forEach( cont3item => {
         countStep = 5;
         if( countCurrent < countEnd ){
             cont3item.textContent = countStep + countCurrent;
-            setTimeout( counter , 5 ); 
+            setTimeout( counter , 500 ); 
         } else {
             cont3item.textContent = countEnd;
         }
@@ -92,8 +92,10 @@ $cont3_strong.forEach( cont3item => {
     window.addEventListener('scroll', e => {
         cont3OffsetTop = cont3.offsetTop;
         cont3Top = window.scrollY;
-        if( cont3OffsetTop > cont3Top-3 &&  cont3OffsetTop < cont3Top+3 ) {
+        if( cont3OffsetTop > cont3Top-500 &&  cont3OffsetTop < cont3Top+500 ) {
             counter();
+        } else {
+            cont3item.textContent = countStart;
         }
     })
 })
